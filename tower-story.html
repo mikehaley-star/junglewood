@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Tower Story | Junglewood</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav id="nav">
+      <div class="nav-inner">
+        <div class="nav-logo"><a href="index.html">Junglewood</a></div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="chapters.html">Tales</a></li>
+          
+          <li><a href="family-tree.html">Family Tree</a></li>
+          <li><a href="in-memoriam.html">In Memoriam</a></li>
+          <li><a href="ora-haley.html">Ora Haley</a></li>
+          <li><a href="tower-story.html">Tower Story</a></li>
+          <li><a href="denver-floral.html">Floral History</a></li>
+          <li><a href="library.html">Library</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>The Tower Story</h1>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="content-wrapper">
+                <div class="fade-in" style="text-align:center; margin-bottom:2.5rem;">
+                    <img src="junglewood-watertower.jpg" alt="The Junglewood water tower with JUNGLEWOOD painted in red" style="max-width:600px; width:100%; border-radius:6px; box-shadow:0 4px 24px rgba(44,37,32,0.12); margin:0 auto;">
+                    <p style="font-size:0.85rem; color:var(--warm-gray); font-style:italic; margin-top:0.8rem;">The water tower with "JUNGLEWOOD" painted in red — best viewed from Wadsworth</p>
+                </div>
+                <p>
+                    Southwest of Junglewood stands a monument to youthful ambition and daring—a silver water tower,
+                    over two hundred feet tall, that has stood sentinel over the landscape for decades. But it wasn't
+                    always an anonymous landmark. Once, during a single summer night in 1967, it became a canvas for
+                    an audacious declaration.
+                </p>
+
+                <p>
+                    Dan and Marshal undertook what they would later describe as their own "Mission Impossible." Their
+                    mission: to paint "JUNGLEWOOD" across the tower's side in letters fifteen feet wide. They planned
+                    every detail with precision. They crafted a stencil, timing their move to slip through the gaps
+                    in the guard patrols. They arrived under cover of darkness with red paint and determination.
+                </p>
+
+                <p>
+                    In just five minutes, under the stars and against the clock, they executed their plan flawlessly.
+                    The red paint announced their home to anyone who cared to look. The tower, once a neutral sentinel,
+                    had become a billboard for Junglewood, a wild and improbable proof that this place, these people,
+                    and their spirit mattered enough to mark forever.
+                </p>
+
+                <p>
+                    The story lived on far longer than the paint. And that's the thing about Junglewood—the real
+                    monuments aren't built in steel or stone. They're built in the stories we tell, the risks we take,
+                    and the mark we leave on the world around us.
+                </p>
+
+                <p>
+                    Best viewed from Wadsworth.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Junglewood · Tales and Memories / Originally curated by Ken Haley · Redesigned with love</p>
+    </footer>
+
+    <script>
+  // Nav scroll shadow
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+  });
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
+  // Fade-in observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

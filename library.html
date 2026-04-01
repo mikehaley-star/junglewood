@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Junglewood Library | Junglewood</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Video Section */
+  .video-section {
+    max-width: var(--content-width);
+    margin: 0 auto 2rem;
+  }
+  .video-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .video-card {
+    background: var(--warm-white);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(61,54,48,0.06);
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    background: #1a1a1a;
+  }
+  .video-container img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+  .video-title {
+    padding: 1rem 1.5rem;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--charcoal);
+    font-style: italic;
+  }
+  .play-btn {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 72px; height: 50px;
+    background: rgba(205,32,31,0.9);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: background 0.2s;
+  }
+  .video-card:hover .play-btn { background: rgba(205,32,31,1); }
+  .play-btn::after {
+    content: '';
+    display: block;
+    width: 0; height: 0;
+    border-style: solid;
+    border-width: 12px 0 12px 20px;
+    border-color: transparent transparent transparent #fff;
+    margin-left: 4px;
+  }
+
+  /* Photo Gallery - fixed height grid, no jumping */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .gallery-item {
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(61,54,48,0.06);
+    background: var(--warm-white);
+  }
+  .gallery-item a {
+    display: block;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+  }
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  .gallery-item:hover img {
+    transform: scale(1.05);
+  }
+  .gallery-caption {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.78rem;
+    color: var(--warm-gray);
+    font-style: italic;
+    text-align: center;
+  }
+  .gallery-count {
+    text-align: center;
+    color: var(--taupe);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+  @media (max-width: 768px) {
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .gallery-item a {
+      height: 200px;
+    }
+  }
+  @media (max-width: 480px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+    .gallery-item a {
+      height: 260px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <div class="nav-logo"><a href="index.html">Junglewood</a></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="chapters.html">Tales</a></li>
+      <li><a href="family-tree.html">Family Tree</a></li>
+      <li><a href="in-memoriam.html">In Memoriam</a></li>
+      <li><a href="ora-haley.html">Ora Haley</a></li>
+      <li><a href="tower-story.html">Tower Story</a></li>
+      <li><a href="denver-floral.html">Floral History</a></li>
+      <li><a href="library.html">Library</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <span class="section-label">Media</span>
+  <h1>Junglewood Library</h1>
+  <p class="subtitle">Videos, photos, and media from the Junglewood family archives</p>
+</section>
+
+<!-- Videos Section - at the top -->
+<section class="bg-white">
+  <div class="section-inner">
+    <h2 class="fade-in" style="font-family:var(--font-heading); font-size:1.6rem; color:var(--charcoal); text-align:center; margin-bottom:1.5rem;">Videos</h2>
+    <div class="video-section">
+      <div class="video-grid">
+        <a href="https://youtu.be/5QtduxJwkX0" target="_blank" rel="noopener" class="video-card fade-in">
+          <div class="video-container">
+            <img src="https://img.youtube.com/vi/5QtduxJwkX0/hqdefault.jpg" alt="A Roadster Ride at Junglewood">
+            <div class="play-btn"></div>
+          </div>
+          <p class="video-title">A Roadster Ride at Junglewood &rarr;</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Photo Gallery -->
+<section class="bg-cream">
+  <div class="section-inner">
+    <h2 class="fade-in" style="font-family:var(--font-heading); font-size:1.6rem; color:var(--charcoal); text-align:center; margin-bottom:0.8rem;">Photo Gallery</h2>
+    <p class="gallery-count fade-in">117 photos &middot; Click any image to view full size</p>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item fade-in">
+        <a href="ora-haley-portrait.jpg" target="_blank"><img src="ora-haley-portrait.jpg" alt="Ora Haley" loading="lazy"></a>
+        <p class="gallery-caption">Ora Haley</p>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="ora-ben-haley.jpg" target="_blank"><img src="ora-ben-haley.jpg" alt="Ora Ben Haley" loading="lazy"></a>
+        <p class="gallery-caption">Ora Ben Haley</p>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="bill-haley-young.jpeg" target="_blank"><img src="bill-haley-young.jpeg" alt="Bill Haley" loading="lazy"></a>
+        <p class="gallery-caption">Bill Haley</p>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="bill-and-christine.png" target="_blank"><img src="bill-and-christine.png" alt="Bill and Christine" loading="lazy"></a>
+        <p class="gallery-caption">Bill and Christine</p>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="tommy-haley.jpg" target="_blank"><img src="tommy-haley.jpg" alt="Tommy Haley" loading="lazy"></a>
+        <p class="gallery-caption">Tommy Haley</p>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="timothy-ritacco.jpg" target="_blank"><img src="timothy-ritacco.jpg" alt="Timothy Ritacco" loading="lazy"></a>
+        <p class="gallery-caption">Timothy Ritacco</p>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="danny-greenhouse-1.jpg" target="_blank"><img src="danny-greenhouse-1.jpg" alt="Danny in Greenhouse" loading="lazy"></a>
+        <p class="gallery-caption">Danny in Greenhouse</p>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="danny-greenhouse-2.jpg" target="_blank"><img src="danny-greenhouse-2.jpg" alt="Danny in Greenhouse" loading="lazy"></a>
+        <p class="gallery-caption">Danny in Greenhouse</p>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="danny-greenhouse-3.jpg" target="_blank"><img src="danny-greenhouse-3.jpg" alt="Danny in Greenhouse" loading="lazy"></a>
+        <p class="gallery-caption">Danny in Greenhouse</p>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="red-rocks-greenhouse.jpg" target="_blank"><img src="red-rocks-greenhouse.jpg" alt="Red Rocks from Greenhouse" loading="lazy"></a>
+        <p class="gallery-caption">Red Rocks from Greenhouse</p>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="junglewood-panoramic.jpg" target="_blank"><img src="junglewood-panoramic.jpg" alt="Junglewood Panoramic" loading="lazy"></a>
+        <p class="gallery-caption">Junglewood Panoramic</p>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="junglewood-watertower.jpg" target="_blank"><img src="junglewood-watertower.jpg" alt="Junglewood Water Tower" loading="lazy"></a>
+        <p class="gallery-caption">Junglewood Water Tower</p>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-001.jpg" target="_blank"><img src="library-001.jpg" alt="Junglewood family photo 1" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-002.jpg" target="_blank"><img src="library-002.jpg" alt="Junglewood family photo 2" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-003.jpg" target="_blank"><img src="library-003.jpg" alt="Junglewood family photo 3" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-004.jpg" target="_blank"><img src="library-004.jpg" alt="Junglewood family photo 4" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-005.jpg" target="_blank"><img src="library-005.jpg" alt="Junglewood family photo 5" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-006.jpg" target="_blank"><img src="library-006.jpg" alt="Junglewood family photo 6" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-007.jpg" target="_blank"><img src="library-007.jpg" alt="Junglewood family photo 7" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-008.jpg" target="_blank"><img src="library-008.jpg" alt="Junglewood family photo 8" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-009.jpg" target="_blank"><img src="library-009.jpg" alt="Junglewood family photo 9" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-010.jpg" target="_blank"><img src="library-010.jpg" alt="Junglewood family photo 10" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-011.jpg" target="_blank"><img src="library-011.jpg" alt="Junglewood family photo 11" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-012.jpg" target="_blank"><img src="library-012.jpg" alt="Junglewood family photo 12" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-013.jpg" target="_blank"><img src="library-013.jpg" alt="Junglewood family photo 13" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-014.jpg" target="_blank"><img src="library-014.jpg" alt="Junglewood family photo 14" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-015.jpg" target="_blank"><img src="library-015.jpg" alt="Junglewood family photo 15" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-016.jpg" target="_blank"><img src="library-016.jpg" alt="Junglewood family photo 16" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-017.jpg" target="_blank"><img src="library-017.jpg" alt="Junglewood family photo 17" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-018.jpg" target="_blank"><img src="library-018.jpg" alt="Junglewood family photo 18" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-019.jpg" target="_blank"><img src="library-019.jpg" alt="Junglewood family photo 19" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-020.jpg" target="_blank"><img src="library-020.jpg" alt="Junglewood family photo 20" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-021.jpg" target="_blank"><img src="library-021.jpg" alt="Junglewood family photo 21" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-022.jpg" target="_blank"><img src="library-022.jpg" alt="Junglewood family photo 22" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-023.jpg" target="_blank"><img src="library-023.jpg" alt="Junglewood family photo 23" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-024.jpg" target="_blank"><img src="library-024.jpg" alt="Junglewood family photo 24" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-025.jpg" target="_blank"><img src="library-025.jpg" alt="Junglewood family photo 25" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-026.jpg" target="_blank"><img src="library-026.jpg" alt="Junglewood family photo 26" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-027.jpg" target="_blank"><img src="library-027.jpg" alt="Junglewood family photo 27" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-028.jpg" target="_blank"><img src="library-028.jpg" alt="Junglewood family photo 28" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-029.jpg" target="_blank"><img src="library-029.jpg" alt="Junglewood family photo 29" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-030.jpg" target="_blank"><img src="library-030.jpg" alt="Junglewood family photo 30" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-031.jpg" target="_blank"><img src="library-031.jpg" alt="Junglewood family photo 31" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-032.jpg" target="_blank"><img src="library-032.jpg" alt="Junglewood family photo 32" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-033.jpg" target="_blank"><img src="library-033.jpg" alt="Junglewood family photo 33" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-034.jpg" target="_blank"><img src="library-034.jpg" alt="Junglewood family photo 34" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-035.jpg" target="_blank"><img src="library-035.jpg" alt="Junglewood family photo 35" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-036.jpg" target="_blank"><img src="library-036.jpg" alt="Junglewood family photo 36" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-037.jpg" target="_blank"><img src="library-037.jpg" alt="Junglewood family photo 37" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-038.jpg" target="_blank"><img src="library-038.jpg" alt="Junglewood family photo 38" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-039.jpg" target="_blank"><img src="library-039.jpg" alt="Junglewood family photo 39" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-040.jpg" target="_blank"><img src="library-040.jpg" alt="Junglewood family photo 40" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-041.jpg" target="_blank"><img src="library-041.jpg" alt="Junglewood family photo 41" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-042.jpg" target="_blank"><img src="library-042.jpg" alt="Junglewood family photo 42" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-043.jpg" target="_blank"><img src="library-043.jpg" alt="Junglewood family photo 43" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-044.jpg" target="_blank"><img src="library-044.jpg" alt="Junglewood family photo 44" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-045.jpg" target="_blank"><img src="library-045.jpg" alt="Junglewood family photo 45" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-046.jpg" target="_blank"><img src="library-046.jpg" alt="Junglewood family photo 46" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-047.jpg" target="_blank"><img src="library-047.jpg" alt="Junglewood family photo 47" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-048.jpg" target="_blank"><img src="library-048.jpg" alt="Junglewood family photo 48" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-049.jpg" target="_blank"><img src="library-049.jpg" alt="Junglewood family photo 49" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-050.jpg" target="_blank"><img src="library-050.jpg" alt="Junglewood family photo 50" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-051.jpg" target="_blank"><img src="library-051.jpg" alt="Junglewood family photo 51" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-052.jpg" target="_blank"><img src="library-052.jpg" alt="Junglewood family photo 52" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-053.jpg" target="_blank"><img src="library-053.jpg" alt="Junglewood family photo 53" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-054.jpg" target="_blank"><img src="library-054.jpg" alt="Junglewood family photo 54" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-055.jpg" target="_blank"><img src="library-055.jpg" alt="Junglewood family photo 55" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-056.jpg" target="_blank"><img src="library-056.jpg" alt="Junglewood family photo 56" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-057.jpg" target="_blank"><img src="library-057.jpg" alt="Junglewood family photo 57" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-058.jpg" target="_blank"><img src="library-058.jpg" alt="Junglewood family photo 58" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-059.jpg" target="_blank"><img src="library-059.jpg" alt="Junglewood family photo 59" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-060.jpg" target="_blank"><img src="library-060.jpg" alt="Junglewood family photo 60" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-061.jpg" target="_blank"><img src="library-061.jpg" alt="Junglewood family photo 61" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-062.jpg" target="_blank"><img src="library-062.jpg" alt="Junglewood family photo 62" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-063.jpg" target="_blank"><img src="library-063.jpg" alt="Junglewood family photo 63" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-064.jpg" target="_blank"><img src="library-064.jpg" alt="Junglewood family photo 64" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-065.jpg" target="_blank"><img src="library-065.jpg" alt="Junglewood family photo 65" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-066.jpg" target="_blank"><img src="library-066.jpg" alt="Junglewood family photo 66" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-067.jpg" target="_blank"><img src="library-067.jpg" alt="Junglewood family photo 67" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-068.png" target="_blank"><img src="library-068.png" alt="Junglewood family photo 68" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-069.jpg" target="_blank"><img src="library-069.jpg" alt="Junglewood family photo 69" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-070.jpg" target="_blank"><img src="library-070.jpg" alt="Junglewood family photo 70" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-071.jpg" target="_blank"><img src="library-071.jpg" alt="Junglewood family photo 71" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-072.jpg" target="_blank"><img src="library-072.jpg" alt="Junglewood family photo 72" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-073.jpg" target="_blank"><img src="library-073.jpg" alt="Junglewood family photo 73" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-074.jpg" target="_blank"><img src="library-074.jpg" alt="Junglewood family photo 74" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-075.jpg" target="_blank"><img src="library-075.jpg" alt="Junglewood family photo 75" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-076.jpg" target="_blank"><img src="library-076.jpg" alt="Junglewood family photo 76" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-077.jpg" target="_blank"><img src="library-077.jpg" alt="Junglewood family photo 77" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-078.jpg" target="_blank"><img src="library-078.jpg" alt="Junglewood family photo 78" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-079.jpg" target="_blank"><img src="library-079.jpg" alt="Junglewood family photo 79" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-080.jpg" target="_blank"><img src="library-080.jpg" alt="Junglewood family photo 80" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-081.jpg" target="_blank"><img src="library-081.jpg" alt="Junglewood family photo 81" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-082.jpg" target="_blank"><img src="library-082.jpg" alt="Junglewood family photo 82" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-083.jpg" target="_blank"><img src="library-083.jpg" alt="Junglewood family photo 83" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-084.jpg" target="_blank"><img src="library-084.jpg" alt="Junglewood family photo 84" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-085.jpg" target="_blank"><img src="library-085.jpg" alt="Junglewood family photo 85" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-086.jpg" target="_blank"><img src="library-086.jpg" alt="Junglewood family photo 86" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-087.jpg" target="_blank"><img src="library-087.jpg" alt="Junglewood family photo 87" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-088.jpg" target="_blank"><img src="library-088.jpg" alt="Junglewood family photo 88" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-089.jpg" target="_blank"><img src="library-089.jpg" alt="Junglewood family photo 89" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-090.jpg" target="_blank"><img src="library-090.jpg" alt="Junglewood family photo 90" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-091.jpg" target="_blank"><img src="library-091.jpg" alt="Junglewood family photo 91" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-092.jpg" target="_blank"><img src="library-092.jpg" alt="Junglewood family photo 92" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-093.png" target="_blank"><img src="library-093.png" alt="Junglewood family photo 93" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-094.jpg" target="_blank"><img src="library-094.jpg" alt="Junglewood family photo 94" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-095.jpg" target="_blank"><img src="library-095.jpg" alt="Junglewood family photo 95" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-096.jpg" target="_blank"><img src="library-096.jpg" alt="Junglewood family photo 96" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-097.jpg" target="_blank"><img src="library-097.jpg" alt="Junglewood family photo 97" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-098.jpg" target="_blank"><img src="library-098.jpg" alt="Junglewood family photo 98" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-099.jpg" target="_blank"><img src="library-099.jpg" alt="Junglewood family photo 99" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-100.jpg" target="_blank"><img src="library-100.jpg" alt="Junglewood family photo 100" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-101.jpg" target="_blank"><img src="library-101.jpg" alt="Junglewood family photo 101" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-102.jpg" target="_blank"><img src="library-102.jpg" alt="Junglewood family photo 102" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-103.jpg" target="_blank"><img src="library-103.jpg" alt="Junglewood family photo 103" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-104.jpg" target="_blank"><img src="library-104.jpg" alt="Junglewood family photo 104" loading="lazy"></a>
+      </div>
+
+      <div class="gallery-item fade-in">
+        <a href="library-105.jpg" target="_blank"><img src="library-105.jpg" alt="Junglewood family photo 105" loading="lazy"></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Junglewood &middot; Tales and Memories</p>
+  <p style="margin-top:0.4rem;">Originally curated by Ken Haley &middot; Redesigned with love</p>
+</footer>
+
+<script>
+  window.addEventListener('scroll', function() {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+  });
+  var hamburger = document.getElementById('hamburger');
+  var navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', function() { navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(function(link) { link.addEventListener('click', function() { navLinks.classList.remove('open'); }); });
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
+</script>
+</body>
+</html>

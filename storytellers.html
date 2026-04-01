@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Storytellers | Junglewood</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav id="nav">
+      <div class="nav-inner">
+        <div class="nav-logo"><a href="index.html">Junglewood</a></div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="chapters.html">Tales</a></li>
+          
+          <li><a href="family-tree.html">Family Tree</a></li>
+          <li><a href="in-memoriam.html">In Memoriam</a></li>
+          <li><a href="ora-haley.html">Ora Haley</a></li>
+          <li><a href="tower-story.html">Tower Story</a></li>
+          <li><a href="denver-floral.html">Floral History</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>The Storytellers</h1>
+                <p class="hero-subtitle">The voices and memories that bring Junglewood to life</p>
+            </div>
+        </section>
+
+        <section class="storyteller-grid">
+            <div class="storyteller-item fade-in">
+                <h3 class="storyteller-name">Abigail</h3>
+                <p class="storyteller-count">1 story</p>
+            </div>
+
+            <div class="storyteller-item fade-in">
+                <h3 class="storyteller-name">Benj</h3>
+                <p class="storyteller-count">7 stories</p>
+            </div>
+
+            <div class="storyteller-item fade-in">
+                <h3 class="storyteller-name">Carla</h3>
+                <p class="storyteller-count">2 stories</p>
+            </div>
+
+            <div class="storyteller-item fade-in">
+                <h3 class="storyteller-name">Cindy</h3>
+                <p class="storyteller-count">3 stories</p>
+            </div>
+
+            <div class="storyteller-item fade-in">
+                <h3 class="storyteller-name">Dan</h3>
+                <p class="storyteller-count">19 stories</p>
+            </div>
+
+            <div class="storyteller-item fade-in">
+                <h3 class="storyteller-name">Dick</h3>
+                <p class="storyteller-count">13 stories</p>
+            </div>
+
+            <div class="storyteller-item fade-in">
+                <h3 class="storyteller-name">Jim</h3>
+                <p class="storyteller-count">12 stories</p>
+            </div>
+
+            <div class="storyteller-item fade-in">
+                <h3 class="storyteller-name">Ken</h3>
+                <p class="storyteller-count">7 stories</p>
+            </div>
+
+            <div class="storyteller-item fade-in">
+                <h3 class="storyteller-name">Kim</h3>
+                <p class="storyteller-count">2 stories</p>
+            </div>
+
+            <div class="storyteller-item fade-in">
+                <h3 class="storyteller-name">Mary</h3>
+                <p class="storyteller-count">1 story</p>
+            </div>
+
+            <div class="storyteller-item fade-in">
+                <h3 class="storyteller-name">Noop</h3>
+                <p class="storyteller-count">3 stories</p>
+            </div>
+
+            <div class="storyteller-item fade-in">
+                <h3 class="storyteller-name">Patsy</h3>
+                <p class="storyteller-count">2 stories</p>
+            </div>
+
+            <div class="storyteller-item fade-in">
+                <h3 class="storyteller-name">Pete</h3>
+                <p class="storyteller-count">5 stories</p>
+            </div>
+
+            <div class="storyteller-item fade-in">
+                <h3 class="storyteller-name">Rosie</h3>
+                <p class="storyteller-count">1 story</p>
+            </div>
+
+            <div class="storyteller-item fade-in">
+                <h3 class="storyteller-name">Susie</h3>
+                <p class="storyteller-count">1 story</p>
+            </div>
+
+            <div class="storyteller-item fade-in">
+                <h3 class="storyteller-name">Tim</h3>
+                <p class="storyteller-count">3 stories</p>
+            </div>
+
+            <div class="storyteller-item fade-in">
+                <h3 class="storyteller-name">Tom</h3>
+                <p class="storyteller-count">4 stories</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Junglewood · Tales and Memories / Originally curated by Ken Haley · Redesigned with love</p>
+    </footer>
+
+    <script>
+  // Nav scroll shadow
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+  });
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
+  // Fade-in observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

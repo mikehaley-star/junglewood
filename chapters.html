@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junglewood Tales | Chapters</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav id="nav">
+      <div class="nav-inner">
+        <div class="nav-logo"><a href="index.html">Junglewood</a></div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="chapters.html">Tales</a></li>
+          
+          <li><a href="family-tree.html">Family Tree</a></li>
+          <li><a href="in-memoriam.html">In Memoriam</a></li>
+          <li><a href="ora-haley.html">Ora Haley</a></li>
+          <li><a href="tower-story.html">Tower Story</a></li>
+          <li><a href="denver-floral.html">Floral History</a></li>
+          <li><a href="library.html">Library</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Junglewood Tales</h1>
+                <p class="hero-subtitle">An email thread that began in July 2001, capturing decades of family stories, adventures, and memories</p>
+            </div>
+        </section>
+
+        <section class="card-grid">
+            <div class="chapter-card fade-in">
+                <a href="ch1.html">
+                    <h3>Chapter 1</h3>
+                    <p class="chapter-title">Nostalgia & Andy Woodbury</p>
+                    <p class="chapter-description">
+                        The beginning of our family's journey through memory, featuring tales of early adventures
+                        and the colorful characters that defined Junglewood.
+                    </p>
+                </a>
+            </div>
+
+            <div class="chapter-card fade-in">
+                <a href="ch2.html">
+                    <h3>Chapter 2</h3>
+                    <p class="chapter-title">Navy Days & Close Calls</p>
+                    <p class="chapter-description">
+                        Military service stories and narrow escapes from our family's bravest members,
+                        told with the humor and heart that define Junglewood.
+                    </p>
+                </a>
+            </div>
+
+            <div class="chapter-card fade-in">
+                <a href="ch3.html">
+                    <h3>Chapter 3</h3>
+                    <p class="chapter-title">Mercury Crashes & Runaways</p>
+                    <p class="chapter-description">
+                        Tales of automotive mishaps and youthful escapades, capturing the spirit of adventure
+                        that ran through the family.
+                    </p>
+                </a>
+            </div>
+
+            <div class="chapter-card fade-in">
+                <a href="ch4.html">
+                    <h3>Chapter 4</h3>
+                    <p class="chapter-title">Adventures & Pranks</p>
+                    <p class="chapter-description">
+                        Mischievous moments and daring deeds that showcase the playful nature and close bonds
+                        among Junglewood's residents.
+                    </p>
+                </a>
+            </div>
+
+            <div class="chapter-card fade-in">
+                <a href="ch5.html">
+                    <h3>Chapter 5</h3>
+                    <p class="chapter-title">Sports & Horses</p>
+                    <p class="chapter-description">
+                        Stories of competition and connection, from athletic pursuits to the beloved horses
+                        that were part of daily life.
+                    </p>
+                </a>
+            </div>
+
+            <div class="chapter-card fade-in">
+                <a href="ch6.html">
+                    <h3>Chapter 6</h3>
+                    <p class="chapter-title">Horses, Travel & Song</p>
+                    <p class="chapter-description">
+                        Adventures beyond Junglewood's borders, featuring journeys, equestrian tales, and
+                        the music that accompanied family life.
+                    </p>
+                </a>
+            </div>
+
+            <div class="chapter-card fade-in">
+                <a href="ch7.html">
+                    <h3>Chapter 7</h3>
+                    <p class="chapter-title">Traditions & Reunions</p>
+                    <p class="chapter-description">
+                        Celebrations and gatherings that brought the family together, preserving cherished
+                        customs and creating lasting memories.
+                    </p>
+                </a>
+            </div>
+
+            <div class="chapter-card fade-in">
+                <a href="ch8.html">
+                    <h3>Chapter 8</h3>
+                    <p class="chapter-title">Cars & Characters</p>
+                    <p class="chapter-description">
+                        Memorable vehicles and the colorful personalities behind the wheel, told with affection
+                        and nostalgic humor.
+                    </p>
+                </a>
+            </div>
+
+            <div class="chapter-card fade-in">
+                <a href="ch9.html">
+                    <h3>Chapter 9</h3>
+                    <p class="chapter-title">The Water Tower Caper</p>
+                    <p class="chapter-description">
+                        The legendary tale of the great water tower painting, a daring nighttime adventure
+                        that became Junglewood's most famous story.
+                    </p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Junglewood · Tales and Memories / Originally curated by Ken Haley · Redesigned with love</p>
+    </footer>
+
+    <script>
+  // Nav scroll shadow
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+  });
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
+  // Fade-in observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

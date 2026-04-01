@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denver Floral Industry History | Junglewood</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav id="nav">
+      <div class="nav-inner">
+        <div class="nav-logo"><a href="index.html">Junglewood</a></div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="chapters.html">Tales</a></li>
+          
+          <li><a href="family-tree.html">Family Tree</a></li>
+          <li><a href="in-memoriam.html">In Memoriam</a></li>
+          <li><a href="ora-haley.html">Ora Haley</a></li>
+          <li><a href="tower-story.html">Tower Story</a></li>
+          <li><a href="denver-floral.html">Floral History</a></li>
+          <li><a href="library.html">Library</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Denver Floral Industry History</h1>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="content-wrapper">
+                <p>
+                    Junglewood played a significant role in Denver's vibrant floral industry during the twentieth century.
+                    At the heart of this legacy were nine greenhouses where carnations were cultivated with care and precision.
+                    These growing spaces represented not just a business, but a way of life, connecting the family to the broader
+                    world of Denver's wholesale flower trade.
+                </p>
+
+                <p>
+                    The work of maintaining and nurturing these greenhouses was meticulous. Disbudding—the painstaking removal of
+                    side buds to produce premium blooms—was a central task that required both skill and patience. The carnations
+                    grown at Junglewood supplied Denver Wholesale Flowers (DWF) and other outlets, contributing to the region's
+                    reputation as a center for quality floral production.
+                </p>
+
+                <p>
+                    More detailed history about the greenhouses, the people who worked within them, the economics of the Denver
+                    floral industry, and Junglewood's role in this important agricultural tradition will be added as we continue
+                    to gather and preserve these stories.
+                </p>
+
+                <p>
+                    If you have memories, photographs, or information about the Junglewood greenhouses and Denver's floral heritage,
+                    we would love to hear from you.
+                </p>
+            </div>
+        </section>
+
+        <!-- Greenhouse Photo Gallery -->
+        <section class="content-section" style="padding-top:0;">
+            <div class="content-wrapper">
+                <h2 class="fade-in" style="font-family:var(--font-heading); font-size:1.8rem; color:var(--charcoal); text-align:center; margin-bottom:2.5rem;">From the Greenhouses</h2>
+
+                <div class="fade-in" style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-bottom:2.5rem;">
+                    <div>
+                        <img src="danny-greenhouse-1.jpg" alt="Danny working in the Junglewood greenhouse" style="width:100%; border-radius:6px; box-shadow:0 4px 20px rgba(61,54,48,0.10);">
+                        <p style="font-size:0.85rem; color:var(--warm-gray); margin-top:0.6rem; font-style:italic; text-align:center;">Danny in the greenhouse</p>
+                    </div>
+                    <div>
+                        <img src="danny-greenhouse-2.jpg" alt="Danny in greenhouse — tending the carnations" style="width:100%; border-radius:6px; box-shadow:0 4px 20px rgba(61,54,48,0.10);">
+                        <p style="font-size:0.85rem; color:var(--warm-gray); margin-top:0.6rem; font-style:italic; text-align:center;">Danny among the carnations</p>
+                    </div>
+                </div>
+
+                <div class="fade-in" style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-bottom:2.5rem;">
+                    <div>
+                        <img src="danny-greenhouse-3.jpg" alt="Danny in the greenhouse at Junglewood" style="width:100%; border-radius:6px; box-shadow:0 4px 20px rgba(61,54,48,0.10);">
+                        <p style="font-size:0.85rem; color:var(--warm-gray); margin-top:0.6rem; font-style:italic; text-align:center;">Inside the Junglewood greenhouse</p>
+                    </div>
+                    <div>
+                        <img src="red-rocks-greenhouse.jpg" alt="Red Rocks viewed from the greenhouse area" style="width:100%; border-radius:6px; box-shadow:0 4px 20px rgba(61,54,48,0.10);">
+                        <p style="font-size:0.85rem; color:var(--warm-gray); margin-top:0.6rem; font-style:italic; text-align:center;">Red Rocks from the greenhouse</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Junglewood · Tales and Memories / Originally curated by Ken Haley · Redesigned with love</p>
+    </footer>
+
+    <script>
+  // Nav scroll shadow
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+  });
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
+  // Fade-in observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
